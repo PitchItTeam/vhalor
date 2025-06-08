@@ -1,0 +1,12 @@
+[build]
+  command = "next build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Prevent client-side 404 redirects (SPA fallback)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
