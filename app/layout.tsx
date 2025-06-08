@@ -3,6 +3,7 @@ import './globals.css'
 import { SectionProvider } from '@/contexts/section-context'
 import { OverlayProvider } from '@/contexts/overlay-context'
 import LoadingScreen from '@/components/loading-screen'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: 'VHALÓR - Pack Less, Save More',
