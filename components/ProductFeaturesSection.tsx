@@ -10,7 +10,7 @@ const features = [
 
 export default function ProductFeaturesSection() {
   return (
-    <section id="product" className="relative h-screen overflow-hidden">
+    <section id="product" className="relative overflow-hidden py-0">
       <ProductFeatures />
     </section>
   );

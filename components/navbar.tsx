@@ -60,8 +60,9 @@ export default function Navbar() {
         <nav className="header-nav">
           <a className="header-link" href="#hero">Home</a>
           <a className="header-link" href="#about">About</a>
-          <a className="header-link" href="#contact">Contact</a>
           <a className="header-link" href="#product">Features</a>
+          <a className="header-link" href="#contact">Contact</a>
+          
         </nav>
       )}
       {/* Mobile Dropdown Menu */}
@@ -91,18 +92,18 @@ export default function Navbar() {
                 About
               </a>
               <a
-                className="header-link px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
-                href="#contact"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </a>
-              <a
                 className="header-link px-4 py-2 hover:bg-gray-100"
                 href="#product"
                 onClick={() => setIsOpen(false)}
               >
                 Features
+              </a>
+              <a
+                className="header-link px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
               </a>
             </div>
           )}

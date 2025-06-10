@@ -13,7 +13,7 @@ export default function AboutSection() {
   return (
     <BackgroundOverlay 
       intensity={overlayIntensity} 
-      className="py-8 sm:py-12 md:py-16"
+      className="py-0"
       minHeight="fit-content"
     >
       <div ref={ref} className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-8 flex flex-col items-center">

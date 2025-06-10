@@ -242,9 +242,9 @@ export default function HeroSection() {
   }
 
   return (
-    <div ref={containerRef} className="w-full min-h-screen h-full flex flex-col items-center justify-center md:justify-start relative mb-0">
-      <div className="absolute inset-0 z-0">
-        <Canvas camera={{ position: [0, 2, 5], fov: 50 }}>
+    <div ref={containerRef} className="w-full flex flex-col items-center justify-start pt-20 md:justify-start relative mb-0">
+      <div className="w-full h-full absolute inset-0 -z-10 pointer-events-none">
+        <Canvas className="pointer-events-none" camera={{ position: [0, 2, 5], fov: 50 }}>
           <ambientLight intensity={0.5} />
           <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
           <AirplaneModel position={position} rotation={rotation} scale={scale} />

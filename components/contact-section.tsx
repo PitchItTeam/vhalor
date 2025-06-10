@@ -33,7 +33,7 @@ export default function ContactSection() {
             Travel smart. Travel Light. Travel with Vhalór.
           </p>
           
-          <div className="mt-auto">
+          <div className="mt-8">
             <div className="text-base md:text-lg mb-4 font-medium text-white">Follow us</div>
             <div className="flex gap-4 md:gap-6">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-70 transition-opacity">
@@ -67,15 +67,15 @@ export default function ContactSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full max-w-md aspect-square mx-auto"
         >
-          <Canvas camera={{ position: [0, 0, 2], fov: 50 }} style={{ background: '#fff' }}>
+          <Canvas camera={{ position: [0, 0, 2], fov: 43 }} style={{ background: '#fff' }} className="rounded-2xl overflow-hidden">
             <ambientLight intensity={0.5} />
             <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
             <pointLight position={[-10, -10, -10]} />
             <ProductModel position={[0, 0, 0]} scale={1.2} rotation={[0, 0, 0]} />
             <OrbitControls 
               enablePan={false}
-              minPolarAngle={Math.PI / 4}
-              maxPolarAngle={Math.PI * 3/4}
+              minPolarAngle={Math.PI / 100}
+              maxPolarAngle={Math.PI * 1}
               rotateSpeed={0.5}
             />
             <Environment preset="city" />

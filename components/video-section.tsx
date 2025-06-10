@@ -151,10 +151,11 @@ export default function VideoSection() {
             </div>
           </motion.div>
 
-          <motion.div className="w-full md:w-1/2 flex flex-col items-start text-left px-4 md:px-0 font-sans" initial={{ opacity: 0, x: 50, y: 20 }} animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: 20 }} transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 100, damping: 20 }}>
+          <motion.div className="w-full md:w-1/2 flex flex-col items-start text-left px-4 md:px-0 font-outfit" initial={{ opacity: 0, x: 50, y: 20 }} animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: 20 }} transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 100, damping: 20 }}>
             <h2 className="text-3xl font-bold mb-2">The Travhalór</h2>
-            <p className="text-lg mb-4">$189.00</p>
-            <p className="text-lg mb-4">Our innovative hoodie was created to solve a common problem faced by budget travelers. Airlines in America and Europe offer cheap flights but charge excessive fees for carry-on luggage. The Travhalór gives you the freedom to bring what you need without paying extra fees, letting you travel smarter and more economically.</p>
+            <p className="text-lg mb-4">Flight tickets are more affordable than ever but we noticed a troubling trend: Airlines have been reducing the personal item size and charging for carry-on bags often quadrupling the $20-$30 dollar ticket. To make matters worse, gate agents are financially incentivized to deem your bag "too large" for the bin and slap on a $100 oversize fee. This practice is not only unfair but also creates anxiety for travelers who can't predict whether they will be hit with unexpected fees.</p>
+            <p className="text-lg mb-4">Each purchase includes 1  jacket and 3 vacuum bags with a hand pump for removing the air so no vacuum needed!</p>
+            <p className="text-lg mb-4">Deliveries start from July 30, 2025.</p>
 
             <label className="text-sm font-medium mb-1">Size</label>
             <div className="flex gap-2 mb-4">
@@ -162,7 +163,7 @@ export default function VideoSection() {
                 <button
                   key={variant.id}
                   onClick={() => setSelectedVariant(variant.id)}
-                  className={`px-4 py-2 border rounded-full text-sm font-medium transition-all ${selectedVariant === variant.id ? 'bg-black text-white' : 'bg-white text-black'}`}
+                  className={`px-4 py-2 border rounded text-sm font-medium transition-all ${selectedVariant === variant.id ? 'bg-black text-white' : 'bg-white text-black'}`}
                 >
                   {variant.title}
                 </button>
@@ -175,11 +176,11 @@ export default function VideoSection() {
               <button onClick={() => setQuantity(quantity + 1)} className="border px-3 py-1 rounded">+</button>
             </div>
 
-            <button onClick={goToCheckout} className="bg-black text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-gray-800 w-full max-w-xs mb-2">
-              Pre-order Now
+            <button onClick={goToCheckout} className="bg-black text-white py-3 px-6 rounded text-lg font-semibold hover:bg-gray-800 w-full max-w-xs mb-2">
+              Pre-order Now | $189
             </button>
 
-            <button onClick={goToCheckout} className="bg-[#5a31f4] text-white py-3 px-6 rounded-full text-lg font-semibold w-full max-w-xs">
+            <button onClick={goToCheckout} className="bg-[#5a31f4] text-white py-3 px-6 rounded text-lg font-semibold w-full max-w-xs">
               Pre-order with <strong className="ml-1">Shop</strong>
               <span className="ml-1 inline-block text-sm bg-white text-[#5a31f4] px-1 rounded">Pay</span>
             </button>
@@ -187,8 +188,8 @@ export default function VideoSection() {
             <p className="text-xs underline text-gray-500 mt-2 cursor-pointer">More payment options</p>
 
             <div className="mt-6 space-y-2 text-sm text-gray-700">
-              <p>🚚 Reliable shipping</p>
-              <p>↩️ Flexible returns</p>
+              <p>🚚 Free shipping inside the US</p>
+              <p>↩️ Flexible refund policy</p>
             </div>
           </motion.div>
         </div>

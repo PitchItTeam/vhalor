@@ -15,16 +15,16 @@ const features = [
     id: 1,
     title: "Lightweight Durability & Waterproof",
     description:
-      "Premium materials with exceptional durability and water resistance.",
+      "Made from premium waterproof Nylon and sown together with heavy duty thread used for bags.",
     hotspotPosition: [0.3, 0, 0.5] as [number, number, number],
     cameraPosition: [-1.4, 0.9, 1.5] as [number, number, number],
     cameraTarget: [0, 0.3, 0] as [number, number, number],
   },
   {
     id: 2,
-    title: "Smart Storage",
+    title: "Internal Storage",
     description:
-      "Intelligent compartments maximize space while keeping belongings secure.",
+      "Pack up to 22 lbs of clothes in the vacuum bags and put inside the internal pocket.",
     hotspotPosition: [0, 0.3, 0] as [number, number, number],
     cameraPosition: [0, 0.3, 2.0] as [number, number, number],
     cameraTarget: [0, 0.3, 0] as [number, number, number],
@@ -33,7 +33,7 @@ const features = [
     id: 3,
     title: "Convertible to Bag",
     description:
-      "Transforms from hoodie to travel bag, adapting to your needs.",
+      "Easily convert the jacket into a bag should you not want to wear it before or after boarding gate.",
     hotspotPosition: [-0.6, 1.3, 0.3] as [number, number, number],
     cameraPosition: [1.4, 1.4, 1.5] as [number, number, number],
     cameraTarget: [0, 0.3, 0] as [number, number, number],
@@ -42,7 +42,7 @@ const features = [
     id: 4,
     title: "Return on Investment",
     description:
-      "Pays for itself by eliminating multiple bags and luggage fees.",
+      "The jacket acts as your golden ticket to a lifetime of free carry-on pays for itself by the time you go on your second trip.",
       hotspotPosition: [-0.3, 1.5, 0.3] as [number, number, number],
       cameraPosition: [0.5, 1.6, 1.5] as [number, number, number],
       cameraTarget: [0, 0.5, 0] as [number, number, number],
@@ -111,7 +111,7 @@ function RotatingBucks({ model }: { model: any }) {
   
   useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.5 // Adjust rotation speed here
+      meshRef.current.rotation.y += delta * 1.5 // Adjust rotation speed here
     }
   })
   
@@ -119,9 +119,9 @@ function RotatingBucks({ model }: { model: any }) {
     <primitive 
       ref={meshRef}
       object={model.scene} 
-      scale={1} 
-      position={[0, 1.25, 0]} 
-      rotation={[0, 0, 0]}
+      scale={1.4} 
+      position={[0.07, 1.3, 0.17]} 
+      rotation={[0, 1, 0]}
     />
   )
 }
