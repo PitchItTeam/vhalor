@@ -236,8 +236,8 @@ export default function VideoSection() {
 
           <motion.div className="w-full md:w-1/2 flex flex-col items-start text-left px-4 md:px-0 font-outfit" initial={{ opacity: 0, x: 50, y: 20 }} animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: 50, y: 20 }} transition={{ duration: 0.8, delay: 0.3, type: "spring", stiffness: 100, damping: 20 }}>
             <h2 className="text-3xl font-bold mb-2">The Travhalór</h2>
-            <p className="text-lg mb-4">Flight tickets are more affordable than ever but we noticed a troubling trend: Airlines have been reducing the personal item size and charging for carry-on bags often doubling or even tripling the ticket price. To make matters worse, gate agents are financially incentivized to deem your bag "too large" for the bin and slap on a $100 oversize fee. This practice is not only unfair but also creates anxiety for travelers who can't predict whether they will be hit with unexpected fees.</p>
-            <p className="text-lg mb-4">Each purchase includes 1  jacket and 3 vacuum bags and a hand pump for removing the air so no vacuum needed!</p>
+            <p className="text-lg mb-4">Flight tickets are more affordable than ever but we noticed a troubling trend: Airlines have been reducing the personal item size and charging for carry-on bags often quadrupling the $20-$30 dollar ticket. To make matters worse, gate agents are financially incentivized to deem your bag "too large" for the bin and slap on a $100 oversize fee. This practice is not only unfair but also creates anxiety for travelers who can't predict whether they will be hit with unexpected fees.</p>
+            <p className="text-lg mb-4">Each purchase includes 1  jacket and 3 vacuum bags with a hand pump for removing the air so no vacuum needed!</p>
             <p className="text-lg mb-4">Deliveries start from July 30, 2025.</p>
 
             <label className="text-sm font-medium mb-1">Size</label>

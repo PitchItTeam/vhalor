@@ -250,7 +250,6 @@ export default function HeroSection() {
           onTouchStart={() => { /* no-op, just to make area responsive */ }}
         />
       )}
-
       <div className="w-full h-full absolute inset-0 -z-10 pointer-events-none">
         <Canvas className="pointer-events-none" camera={{ position: [0, 2, 5], fov: 50 }}>
           <ambientLight intensity={0.5} />
