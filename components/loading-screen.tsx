@@ -113,7 +113,7 @@ export default function LoadingScreen() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-xl font-bold mb-2">Loading VHALÓR Experience</p>
+            <p className="text-xl font-bold mb-2">Loading experience, please wait.</p>
             <AnimatePresence mode="wait">
               <motion.div
                 key={factIndex}

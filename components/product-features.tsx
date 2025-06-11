@@ -207,14 +207,12 @@ export default function ProductFeatures() {
   const lastTouchX = useRef(0)
   const isInView = useInView(sectionRef, { once: false, amount: 0.5 })
 
-  // Show and auto-hide swipe hint when section is in view
+  // Show swipe hint when section is in view and user hasn't swiped
   useEffect(() => {
     if (isMobile && isInView && !hasSwiped) {
       setShowSwipeHint(true)
-      const timer = setTimeout(() => {
-        setShowSwipeHint(false)
-      }, 3000)
-      return () => clearTimeout(timer)
+    } else {
+      setShowSwipeHint(false)
     }
   }, [isMobile, isInView, hasSwiped])
 
@@ -419,23 +417,22 @@ export default function ProductFeatures() {
           {/* Mobile Swipe Hint */}
           {isMobile && showSwipeHint && (
             <motion.div 
-              className="fixed top-1/2 left-[30%] -translate-x-1/2 -translate-y-1/2 z-20"
-              initial={{ opacity: 0, scale: 0.9 }}
+              className="absolute top-4 right-4 z-30"
+              initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.3 }}
+              style={{ pointerEvents: 'none', background: 'transparent' }}
             >
-              <div className="text-sm text-white flex items-center gap-2 bg-black/50 px-6 py-3 rounded-full backdrop-blur-sm whitespace-nowrap">
-                <span>Swipe right to explore</span>
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M4 8h8m0 0l-3-3m3 3l-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </motion.div>
-              </div>
+              <motion.span
+                className="text-xs font-semibold text-gray-800 dark:text-gray-200 rounded px-2 py-1 shadow-none"
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.12, 1] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
+                style={{ display: 'inline-block', background: 'transparent' }}
+              >
+                Swipe left<span className="ml-1">&gt;&gt;</span>
+              </motion.span>
             </motion.div>
           )}
         </div>

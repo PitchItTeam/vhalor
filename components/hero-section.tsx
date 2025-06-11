@@ -242,7 +242,15 @@ export default function HeroSection() {
   }
 
   return (
-    <div ref={containerRef} className="w-full flex flex-col items-center justify-start pt-20 md:justify-start relative mb-0">
+    <div ref={containerRef} className="w-full flex flex-col items-center justify-start pt-8 md:pt-20 relative mb-0">
+      {/* Add a transparent, absolutely positioned div at the top to capture mobile touches */}
+      {isMobile && (
+        <div
+          style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '20vh', zIndex: 20, background: 'transparent', touchAction: 'manipulation' }}
+          onTouchStart={() => { /* no-op, just to make area responsive */ }}
+        />
+      )}
+
       <div className="w-full h-full absolute inset-0 -z-10 pointer-events-none">
         <Canvas className="pointer-events-none" camera={{ position: [0, 2, 5], fov: 50 }}>
           <ambientLight intensity={0.5} />
