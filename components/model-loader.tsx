@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useGLTF } from "@react-three/drei"
 
 // Extend Window interface to add our global flags
 declare global {
@@ -40,13 +39,11 @@ export default function ModelLoader() {
 
         if (cachedResponse) {
           console.log("Loading model from cache");
-          // If cached, use the cached version
-          await useGLTF.preload(MODEL_URL, true); // true to use cached version
+          // Just resolve, don't use useGLTF.preload
+          await cachedResponse.blob();
         } else {
           console.log("Loading model from network and caching");
           // If not cached, load from network and cache it
-          await useGLTF.preload(MODEL_URL);
-          // Cache the model
           const response = await fetch(MODEL_URL);
           await cache.put(MODEL_URL, response.clone());
         }
@@ -84,4 +81,4 @@ export default function ModelLoader() {
 
   // This component doesn't render anything
   return null
-} 
+}
