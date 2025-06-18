@@ -197,23 +197,23 @@ export default function VideoSection() {
                   />
                   {/* Minimal overlay video controls: only buttons and time, no background or blur */}
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 w-[90%] md:w-auto">
-                    <button onClick={togglePlay} className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none" aria-label={isPlaying ? 'Pause' : 'Play'}>
+                    <button onClick={togglePlay} className="w-10 h-10 flex items-center justify-center rounded-full bg-black/10 hover:bg-black/20 text-black transition-colors focus:outline-none" aria-label={isPlaying ? 'Pause' : 'Play'}>
                       {isPlaying ? (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" width="24" height="24">
-                          <rect x="6" y="4" width="4" height="16" rx="1.5" fill="white" />
-                          <rect x="14" y="4" width="4" height="16" rx="1.5" fill="white" />
+                          <rect x="6" y="4" width="4" height="16" rx="1.5" fill="black" />
+                          <rect x="14" y="4" width="4" height="16" rx="1.5" fill="black" />
                         </svg>
                       ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="24" height="24">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="24" height="24">
                           <polygon points="6,4 20,12 6,20" />
                         </svg>
                       )}
                     </button>
-                    <span className="text-xs text-white/80 font-mono min-w-[36px] text-right select-none">
+                    <span className="text-xs text-black/80 font-mono min-w-[36px] text-right select-none">
                       {Math.floor(currentTime / 60)}:{String(Math.floor(currentTime % 60)).padStart(2, '0')}
                     </span>
-                    <input type="range" min={0} max={duration || 0} step={0.1} value={currentTime} onChange={handleSeek} className="flex-1 h-1 mx-2 bg-white/20 rounded-full appearance-none cursor-pointer focus:outline-none transition-all duration-200" aria-label="Seek" style={{ accentColor: '#fff', height: '6px' }} />
-                    <span className="text-xs text-white/80 font-mono min-w-[36px] text-left select-none">
+                    <input type="range" min={0} max={duration || 0} step={0.1} value={currentTime} onChange={handleSeek} className="flex-1 h-1 mx-2 bg-black/20 rounded-full appearance-none cursor-pointer focus:outline-none transition-all duration-200" aria-label="Seek" style={{ accentColor: '#000', height: '6px' }} />
+                    <span className="text-xs text-black/80 font-mono min-w-[36px] text-left select-none">
                       {duration ? `${Math.floor(duration / 60)}:${String(Math.floor(duration % 60)).padStart(2, '0')}` : '0:00'}
                     </span>
                   </div>
