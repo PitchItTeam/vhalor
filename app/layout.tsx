@@ -3,7 +3,7 @@ import './globals.css'
 import { SectionProvider } from '@/contexts/section-context'
 import { OverlayProvider } from '@/contexts/overlay-context'
 import LoadingScreen from '@/components/loading-screen'
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
@@ -34,7 +34,6 @@ export default function RootLayout({
             {children}
           </OverlayProvider>
         </SectionProvider>
-        <SpeedInsights />
         <Analytics />
       </body>
     </html>

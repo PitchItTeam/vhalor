@@ -6,6 +6,8 @@ import { useMobile } from "@/hooks/use-mobile"
 import BackgroundOverlay from "./background-overlay"
 import { useOverlay } from "@/contexts/overlay-context"
 import { shopifyFetch } from "@/lib/shopify"
+import Image from 'next/image'
+import ROICalculator from "./roi-calculator"
 
 const SHOPIFY_DOMAIN = "xmf716-mp.myshopify.com"
 
@@ -219,10 +221,13 @@ export default function VideoSection() {
                   </div>
                 </div>
               ) : (
-                <img 
-                  src={mediaItems[activeSlide].src} 
-                  alt="carousel media" 
-                  className="w-screen h-[80vh] max-h-none max-w-none rounded-2xl object-cover border-8 border-white md:w-auto md:max-h-[80vh] md:max-w-full md:h-auto md:border-none overflow-hidden shadow-2xl" 
+                <Image 
+                  src={mediaItems[activeSlide].src}
+                  alt="carousel media"
+                  width={1200}
+                  height={800}
+                  className="w-screen h-[80vh] max-h-none max-w-none rounded-2xl object-cover border-8 border-white md:w-auto md:max-h-[80vh] md:max-w-full md:h-auto md:border-none overflow-hidden shadow-2xl"
+                  priority={activeSlide === 0}
                 />
               )}
               {/* Carousel indicators */}
@@ -253,22 +258,25 @@ export default function VideoSection() {
               ))}
             </div>
 
-            <div className="flex items-center mb-4 gap-2">
-              <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="border px-3 py-1 rounded">−</button>
-              <span className="min-w-[32px] text-center">{quantity}</span>
-              <button onClick={() => setQuantity(quantity + 1)} className="border px-3 py-1 rounded">+</button>
+            <div className="flex flex-col md:flex-row md:items-end md:gap-4 w-full mt-4">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center mb-4 gap-2">
+                  <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="border px-3 py-1 rounded">−</button>
+                  <span className="min-w-[32px] text-center">{quantity}</span>
+                  <button onClick={() => setQuantity(quantity + 1)} className="border px-3 py-1 rounded">+</button>
+                </div>
+                <div className="flex flex-col gap-2 max-w-xs">
+                  <button onClick={goToCheckout} className="bg-black text-white py-3 px-6 rounded text-lg font-semibold hover:bg-gray-800 w-full">
+                    Pre-order Now | $189
+                  </button>
+                  <button onClick={goToCheckout} className="bg-[#5a31f4] text-white py-3 px-6 rounded text-lg font-semibold w-full">
+                    Pre-order with <strong className="ml-1">Shop</strong>
+                    <span className="ml-1 inline-block text-sm bg-white text-[#5a31f4] px-1 rounded">Pay</span>
+                  </button>
+                  <ROICalculator />
+                </div>
+              </div>
             </div>
-
-            <button onClick={goToCheckout} className="bg-black text-white py-3 px-6 rounded text-lg font-semibold hover:bg-gray-800 w-full max-w-xs mb-2">
-              Pre-order Now | $189
-            </button>
-
-            <button onClick={goToCheckout} className="bg-[#5a31f4] text-white py-3 px-6 rounded text-lg font-semibold w-full max-w-xs">
-              Pre-order with <strong className="ml-1">Shop</strong>
-              <span className="ml-1 inline-block text-sm bg-white text-[#5a31f4] px-1 rounded">Pay</span>
-            </button>
-
-            <p className="text-xs underline text-gray-500 mt-2 cursor-pointer">More payment options</p>
 
             <div className="mt-6 space-y-2 text-sm text-gray-700">
               <p>🚚 Free shipping inside the US</p>

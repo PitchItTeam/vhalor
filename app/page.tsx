@@ -9,6 +9,11 @@ import ProductFeatures from "@/components/product-features"
 import AboutSection from "@/components/about-section"
 import ContactSection from "@/components/contact-section"
 import ProductFeaturesSection from "@/components/ProductFeaturesSection"
+import { Analytics } from '@vercel/analytics/react'
+
+// Removed duplicate default export App; only one default export is allowed per file.
+
+
 
 export default function Home() {
   const isMobile = useMobile()
@@ -19,7 +24,7 @@ export default function Home() {
   const [isAtProductFirstFeature, setIsAtProductFirstFeature] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   
-  const sections = ["hero", "video", "product", "about", "contact"]
+  const sections = ["hero", "video", "product", "roi", "about", "contact"]
 
   // Track scroll progress for time-of-day styling
   useEffect(() => {
