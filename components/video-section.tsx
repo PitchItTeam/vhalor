@@ -244,6 +244,7 @@ export default function VideoSection() {
             <p className="text-lg mb-4">Flight tickets are more affordable than ever but we noticed a troubling trend: Airlines have been reducing the personal item size and charging for carry-on bags often quadrupling the $20-$30 dollar ticket. To make matters worse, gate agents are financially incentivized to deem your bag "too large" for the bin and slap on a $100 oversize fee. This practice is not only unfair but also creates anxiety for travelers who can't predict whether they will be hit with unexpected fees.</p>
             <p className="text-lg mb-4">Each purchase includes 1  jacket and 3 vacuum bags with a hand pump for removing the air so no vacuum needed!</p>
             <p className="text-lg mb-4">Deliveries start from July 30, 2025.</p>
+            <p className="text-lg mb-4">The model in the image is 6' 185lbs with 20lbs of clothes in the jacket.</p>
 
             <label className="text-sm font-medium mb-1">Size</label>
             <div className="flex gap-2 mb-4">
